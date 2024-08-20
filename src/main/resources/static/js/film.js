@@ -31,15 +31,13 @@ async function findById(id){
             if(mandje === null){
                 mandje = []
             }
-            else
-                {///gestopt hier
-                    if (mandje.some(object => object.titel === mandItem.titel)) {
+            if (!mandje.some(object => object.titel === mandItem.titel)) {
                         mandje.push(mandItem)
+                        console.log(mandje)
                         sessionStorage.setItem("mandje", JSON.stringify(mandje))
-
                     }
-                }
-            //window.location = "mandje.html"
+
+            window.location = "mandje.html"
 
             }
 
