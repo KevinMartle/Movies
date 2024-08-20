@@ -33,10 +33,6 @@ else{
     toon("storing");
 }
 
-
-
-
-
 async function findByGenreId(genreid){
     const response = await fetch (`films/${genreid}`)
     if(response.ok){
