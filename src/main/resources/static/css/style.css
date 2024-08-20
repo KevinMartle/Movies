@@ -1,0 +1,12 @@
+
+body{
+    margin : auto;
+}
+
+
+nav li {
+    display: inline;
+    margin: 0px 5px;
+    text-decoration: none;
+}
+
