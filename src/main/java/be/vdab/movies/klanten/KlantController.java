@@ -15,16 +15,16 @@ public class KlantController {
         this.klantService = klantService;
     }
 
-    private record KlantZonderIdEnNamenAanElkaar(String voorEnAchternaam, String straatNummer, String postcode, String gemeente){
-        KlantZonderIdEnNamenAanElkaar(Klant klant){
-            this(klant.getFamilienaam() + " " + klant.getVoornaam(), klant.getStraatNummer(), klant.getPostcode(), klant.getGemeente());
+    private record KlantMetNamenAanElkaar(int id, String voorEnAchternaam, String straatNummer, String postcode, String gemeente){
+        KlantMetNamenAanElkaar(Klant klant){
+            this(klant.getId(), klant.getFamilienaam() + " " + klant.getVoornaam(), klant.getStraatNummer(), klant.getPostcode(), klant.getGemeente());
         }
     }
 
     @GetMapping(params = "stukWoord")
-    Stream<KlantZonderIdEnNamenAanElkaar>findByStukWoord(String stukWoord){
+    Stream<KlantMetNamenAanElkaar>findByStukWoord(String stukWoord){
         return klantService.findByStukWoord(stukWoord)
                 .stream()
-                .map(KlantZonderIdEnNamenAanElkaar::new);
+                .map(KlantMetNamenAanElkaar::new);
     }
 }

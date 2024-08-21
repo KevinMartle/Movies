@@ -38,4 +38,29 @@ public class FilmRepository {
                 .query(Film.class)
                 .optional();
     }
+
+    public Optional<Film> findAndLockById(int id){
+        String sql = """
+                select id, genreId, titel, voorraad, gereserveerd, prijs
+                from films
+                where id = ?
+                for update
+                """;
+        return jdbcClient.sql(sql)
+                .param(id)
+                .query(Film.class)
+                .optional();
+    }
+
+
+   public void updateFilmGereserveerd(int id, int gereserveerd){
+        String sql = """
+                update films
+                set gereserveerd = ?
+                where id = ?
+                """;
+        jdbcClient.sql(sql)
+                .params(gereserveerd, id)
+                .update();
+    }
 }

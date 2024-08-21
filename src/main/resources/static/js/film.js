@@ -26,7 +26,7 @@ async function findById(id){
         document.getElementById("button").disabled = beschikbaar === 0;
         const button = byId("button")
         button.onclick = () =>{
-            let mandItem = {titel : film.titel, prijs : Number(film.prijs)}
+            let mandItem = {id : filmId  ,titel : film.titel, prijs : Number(film.prijs)}
             let mandje = JSON.parse(sessionStorage.getItem("mandje"))
             if(mandje === null){
                 mandje = []

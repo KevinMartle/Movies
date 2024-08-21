@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ResponseStatus(HttpStatus.NOT_FOUND)
 public class FilmNietGevondenException extends RuntimeException{
-    FilmNietGevondenException(){
+    public FilmNietGevondenException(){
         super("Film bestaat niet");
     }
 }

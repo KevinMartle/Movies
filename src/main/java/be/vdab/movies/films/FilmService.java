@@ -21,4 +21,13 @@ public class FilmService {
     Optional<Film>findById(int id){
         return filmRepository.findById(id);
     }
+
+    Optional<Film>findAndLockById(int id){
+        return filmRepository.findAndLockById(id);
+    }
+
+    @Transactional(readOnly = false)
+    void updateFilmGereserveerd(int id, int gereserveerd){
+        filmRepository.updateFilmGereserveerd(id, gereserveerd);
+    }
 }

@@ -43,5 +43,13 @@ public class Film {
         return prijs;
     }
 
+    public void maakReservatie(){
+        if(gereserveerd == voorraad){
+            throw new GeenVoorraadMeerException();
+        }
+        gereserveerd += 1;
+
+    }
+
     
 }
