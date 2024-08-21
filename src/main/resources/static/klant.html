@@ -9,11 +9,11 @@
 </head>
 <body>
 <h1>Klant</h1>
-<label>Woord:
-    <input type = "text" id = "input" required>
-</label>
-<button id = "zoek">Zoek</button>
-<table>
+<label>Woord*:<span id = "verplicht" hidden>Verplicht in te vullen.</span><br>
+    <input type = "text" id = "input" required placeholder = "Typ hier de familienaam." onfocus="this.value = ''">
+</label><br>
+<button id = "zoek">Zoek</button><br>
+<table id = "table" hidden>
     <thead>
         <tr>
             <th>naam</th>
@@ -26,6 +26,7 @@
 
     </tbody>
 </table>
+<div id = "storing" hidden>Storing</div>
 <a href = "index.html">Startpagina</a>
 <a href = "mandje.html">Mandje</a>
 
