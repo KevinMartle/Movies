@@ -77,22 +77,20 @@ button:disabled{
 }
 
 table, td, tfoot{
-    /*background-color: white;*/
     border: 1px solid lightgrey;
     border-collapse: collapse;
-    padding : 5px 0px;
+    padding : 5px ;
     margin-bottom : 15px
 
 }
-tbody{
+tbody, tfoot{
     background-color: white;
 }
 
 thead{
     background-color: limegreen;
     color : white;
-    margin : 0;
-    padding : 10px
+
 }
 tfoot{
     font-weight: bold;
