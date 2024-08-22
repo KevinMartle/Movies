@@ -1,12 +1,114 @@
 
 body{
+    margin : 0;
+    padding : 0;
+    background-color: blanchedalmond;
+    font-family: Arial, sans-serif;
+
+}
+
+.wrapper{
+    width :80%;
+    height: auto;
     margin : auto;
 }
+
+nav{
+    background-color: limegreen;
+    padding : 10px;
+    border-radius: 10px;
+    align-items: stretch;
+
+}
+
+nav ul {
+    padding-left: 0;
+}
+
 
 
 nav li {
     display: inline;
-    margin: 0px 5px;
     text-decoration: none;
+
+
 }
 
+nav a{
+    padding : 5px 10px 5px 0px;
+    color: azure;
+}
+
+a{
+    color : black
+
+}
+
+a:hover {
+    color : blue;
+}
+nav a:hover{
+    color : red
+}
+
+
+button{
+    background-color: limegreen ;
+    color : white;
+    width : 100px;
+    height : 35px;
+    margin : 10px 0px;
+    border-radius : 10px
+
+}
+
+button:hover{
+    background-color: coral;
+}
+
+button:disabled{
+    background-color: darkgrey;
+}
+
+#prijs, #voorraad, #gereserveerd, #beschikbaar{
+    font-weight: bold;
+    padding-bottom : 10px;
+    margin: 0;
+}
+
+table, td, tfoot{
+    /*background-color: white;*/
+    border: 1px solid lightgrey;
+    border-collapse: collapse;
+    padding : 5px 0px;
+    margin-bottom : 15px
+
+}
+tbody{
+    background-color: white;
+}
+
+thead{
+    background-color: limegreen;
+    color : white;
+    margin : 0;
+    padding : 10px
+}
+tfoot{
+    font-weight: bold;
+    border-top : 5px solid black
+}
+
+.fout{
+    background-color: black;
+    color : red;
+}
+
+input, span{
+    margin :10px 0px
+}
+
+#klanten tr:nth-child(even){
+    background-color: lightgoldenrodyellow;
+
+}

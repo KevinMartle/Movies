@@ -10,7 +10,7 @@ import java.util.List;
 class KlantService {
     private final KlantRepository klantRepository;
 
-    public KlantService(KlantRepository klantRepository) {
+    KlantService(KlantRepository klantRepository) {
         this.klantRepository = klantRepository;
     }
 

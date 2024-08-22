@@ -4,10 +4,10 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 
-public class ReservatieController {
+class ReservatieController {
     private final ReservatieService reservatieService;
 
-    public ReservatieController(ReservatieService reservatieService) {
+    ReservatieController(ReservatieService reservatieService) {
         this.reservatieService = reservatieService;
     }
 

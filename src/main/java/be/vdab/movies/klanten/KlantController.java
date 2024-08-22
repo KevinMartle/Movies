@@ -8,10 +8,10 @@ import java.util.stream.Stream;
 
 @RestController
 @RequestMapping("klanten")
-public class KlantController {
+class KlantController {
     private final KlantService klantService;
 
-    public KlantController(KlantService klantService) {
+    KlantController(KlantService klantService) {
         this.klantService = klantService;
     }
 

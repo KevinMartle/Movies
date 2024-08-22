@@ -5,11 +5,6 @@ const filmId = sessionStorage.getItem("filmid")
 findById(filmId)
 
 
-
-
-
-
-
 async function findById(id){
     const response =  await fetch (`films/film/${id}`)
     if(response.ok){
@@ -24,8 +19,9 @@ async function findById(id){
         const beschikbaar = Number(film.voorraad)-Number(film.gereserveerd)
         document.getElementById("beschikbaar").textContent = beschikbaar
         document.getElementById("button").disabled = beschikbaar === 0;
-        const button = byId("button")
-        button.onclick = () =>{
+
+        //toevoegen aan mandje en opslaan in sessionstorage
+        byId("button").onclick = () =>{
             let mandItem = {id : filmId  ,titel : film.titel, prijs : Number(film.prijs)}
             let mandje = JSON.parse(sessionStorage.getItem("mandje"))
             if(mandje === null){
@@ -38,13 +34,8 @@ async function findById(id){
                     }
 
             window.location = "mandje.html"
-
             }
-
-
-
     }
-
     else{
         if (response.status === 404){
             const responseBody = await response.json()

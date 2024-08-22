@@ -2,16 +2,15 @@ package be.vdab.movies.films;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.util.List;
 import java.util.Optional;
 
 @Service
 @Transactional(readOnly = true)
-public class FilmService {
+class FilmService {
     private final FilmRepository filmRepository;
 
-    public FilmService(FilmRepository filmRepository) {
+    FilmService(FilmRepository filmRepository) {
         this.filmRepository = filmRepository;
     }
 
@@ -22,12 +21,4 @@ public class FilmService {
         return filmRepository.findById(id);
     }
 
-    Optional<Film>findAndLockById(int id){
-        return filmRepository.findAndLockById(id);
-    }
-
-    @Transactional(readOnly = false)
-    void updateFilmGereserveerd(int id, int gereserveerd){
-        filmRepository.updateFilmGereserveerd(id, gereserveerd);
-    }
 }

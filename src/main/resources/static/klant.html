@@ -2,16 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Klant</title>
     <script src = "js/klant.js" type = "module"></script>
     <link rel = "icon" href = "images/movies.ico" type = "image/x-icon">
-    <link rel = "stylesheet" href  ="css/style.css">
+    <link rel = "stylesheet" href = "css/style.css">
 </head>
 <body>
+<div class = "wrapper">
 <h1>Klant</h1>
-<label>Woord*:<span id = "verplicht" hidden>Verplicht in te vullen.</span><br>
+<label>Woord*: <span id = "verplicht" hidden class = "fout">Verplicht in te vullen.</span><br>
     <input type = "text" id = "input" required placeholder = "Typ hier de familienaam." onfocus="this.value = ''">
 </label><br>
+<span hidden id = "nietGevonden" class = "fout">Geen klanten gevonden.</span>
+<br>
 <button id = "zoek">Zoek</button><br>
 <table id = "table" hidden>
     <thead>
@@ -26,9 +30,9 @@
 
     </tbody>
 </table>
-<div id = "storing" hidden>Storing</div>
+<div id = "storing" hidden class = "fout">Storing</div>
 <a href = "index.html">Startpagina</a>
 <a href = "mandje.html">Mandje</a>
-
+</div>
 </body>
 </html>

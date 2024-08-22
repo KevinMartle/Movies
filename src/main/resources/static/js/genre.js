@@ -1,11 +1,10 @@
 "use strict";
 import {byId, toon, verwijderChildElementenVan} from "./util.js";
 
-
+//aanmaken navigatiebar genres
 const response = await fetch("genres");
 if(response.ok){
     const genres = await response.json();
-    const lijst = byId("genres");
     for (const genre of genres){
         const li = document.createElement("li");
         const a = document.createElement("a");
@@ -13,17 +12,17 @@ if(response.ok){
         a.textContent = genre.naam;
         a.dataset.genreId = genre.id;
         li.appendChild(a);
-        lijst.appendChild(li);
+        byId("genres").appendChild(li);
     }
+    //toon de films per genre
     const links = document.querySelectorAll("#genres a")
     for(const link of links){
         link.onclick = async () =>{
-            const section = byId("films");
-            verwijderChildElementenVan(section);
+            verwijderChildElementenVan(byId("films"));
             toon("films");
             const header = document.createElement("h2")
             header.textContent = link.textContent;
-            section.appendChild(header);
+            byId("films").appendChild(header);
             const genreid = Number(link.getAttribute('data-genre-id'))
             findByGenreId(genreid)
         }
@@ -33,6 +32,7 @@ else{
     toon("storing");
 }
 
+//aanmaken functie om info te tonen over de aangeklikte film
 async function findByGenreId(genreid){
     const response = await fetch (`films/${genreid}`)
     if(response.ok){
@@ -44,12 +44,7 @@ async function findByGenreId(genreid){
             const img = document.createElement("img");
             img.src = `images/${film}.jpg`
             a.appendChild(img)
-            const section = byId("films")
-            section.appendChild(a)
-
-
-
-
+            byId("films").appendChild(a)
         }
         const filmLinks = document.querySelectorAll("#films a")
         for (const filmLink of filmLinks){

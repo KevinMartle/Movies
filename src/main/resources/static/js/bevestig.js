@@ -14,7 +14,7 @@ byId("bevestig").onclick = async () => {
     }
     byId("bevestig").disabled = true
     byId("mandje").hidden = true
-    sessionStorage.setItem("mandje", "")
+    sessionStorage.removeItem("mandje")
 }
 
 
@@ -38,7 +38,6 @@ async function create(reservatie, titel){
             const li = document.createElement("li")
             li.textContent = `${titel} :Uitverkocht`
             byId("lijst").appendChild(li)
-
         }
         if(response.status === 404){
             toon("storing")

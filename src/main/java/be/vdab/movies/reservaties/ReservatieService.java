@@ -9,11 +9,11 @@ import org.springframework.transaction.annotation.Transactional;
 import java.time.LocalDateTime;
 
 @Service
-public class ReservatieService {
+class ReservatieService {
     private final ReservatieRepository reservatieRepository;
     private final FilmRepository filmRepository;
 
-    public ReservatieService(ReservatieRepository reservatieRepository, FilmRepository filmRepository) {
+    ReservatieService(ReservatieRepository reservatieRepository, FilmRepository filmRepository) {
         this.reservatieRepository = reservatieRepository;
         this.filmRepository = filmRepository;
     }

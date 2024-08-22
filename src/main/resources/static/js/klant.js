@@ -6,23 +6,27 @@ byId("zoek").onclick = async () =>{
     verberg("table")
     verberg("storing")
     verberg("verplicht")
+    verberg("nietGevonden")
     const stukWoord = byId("input")
     if(!stukWoord.checkValidity()){
-
         toon("verplicht")
         stukWoord.focus()
     }
     else{
         findByStukWoord(stukWoord.value)
-
     }
 }
 
-
+//functie dat klanten zoek op basis van een stukje van een naam,
+//bij het vinden van een naam, creëren van een tabel met klantgegevens,
+//waarbij de klantnaam een link is
 async function findByStukWoord(stukWoord){
     const response = await fetch (`klanten?stukWoord=${stukWoord}`)
     if(response.ok){
         const lijstKlanten = await response.json()
+        if(lijstKlanten.length === 0){
+            toon("nietGevonden")
+        }
         const klanten = byId("klanten")
         for( const klant of lijstKlanten){
             toon("table")

@@ -6,10 +6,10 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class KlantRepository {
+class KlantRepository {
     private final JdbcClient jdbcClient;
 
-    public KlantRepository(JdbcClient jdbcClient) {
+    KlantRepository(JdbcClient jdbcClient) {
         this.jdbcClient = jdbcClient;
     }
 

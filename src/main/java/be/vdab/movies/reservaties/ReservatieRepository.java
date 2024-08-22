@@ -4,10 +4,10 @@ import org.springframework.jdbc.core.simple.JdbcClient;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class ReservatieRepository {
+class ReservatieRepository {
     private final JdbcClient jdbcClient;
 
-    public ReservatieRepository(JdbcClient jdbcClient) {
+    ReservatieRepository(JdbcClient jdbcClient) {
         this.jdbcClient = jdbcClient;
     }
 

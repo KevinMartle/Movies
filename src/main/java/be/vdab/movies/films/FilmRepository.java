@@ -2,7 +2,6 @@ package be.vdab.movies.films;
 
 import org.springframework.jdbc.core.simple.JdbcClient;
 import org.springframework.stereotype.Repository;
-
 import java.util.List;
 import java.util.Optional;
 

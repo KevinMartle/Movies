@@ -10,10 +10,10 @@ import java.util.stream.Stream;
 
 @RestController
 @RequestMapping("films")
-public class FilmController {
+class FilmController {
     private final FilmService filmService;
 
-    public FilmController(FilmService filmService) {
+    FilmController(FilmService filmService) {
         this.filmService = filmService;
     }
 
@@ -31,7 +31,7 @@ public class FilmController {
     }
     @GetMapping("film/{id}")
     FilmZonderGenreId findById(@PathVariable int id){
-        return filmService.findById(id).map(film-> new FilmZonderGenreId(film)).orElseThrow(()-> new FilmNietGevondenException());
+        return filmService.findById(id).map(FilmZonderGenreId::new).orElseThrow(FilmNietGevondenException::new);
         }
 
 }

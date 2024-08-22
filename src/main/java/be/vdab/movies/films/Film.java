@@ -10,12 +10,12 @@ public class Film {
     private int gereserveerd;
     private final BigDecimal prijs;
 
-    public Film(int gereserveerd, int id, int genreId, String titel, int voorraad, BigDecimal prijs) {
-        this.gereserveerd = gereserveerd;
+    public Film(int id, int genreId, String titel, int voorraad, int gereserveerd, BigDecimal prijs) {
         this.id = id;
         this.genreId = genreId;
         this.titel = titel;
         this.voorraad = voorraad;
+        this.gereserveerd = gereserveerd;
         this.prijs = prijs;
     }
 

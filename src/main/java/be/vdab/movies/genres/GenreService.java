@@ -11,7 +11,7 @@ import java.util.List;
 class GenreService {
     private final GenreRepository genreRepository;
 
-    public GenreService(GenreRepository genreRepository) {
+    GenreService(GenreRepository genreRepository) {
         this.genreRepository = genreRepository;
     }
 
